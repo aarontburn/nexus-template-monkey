@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+
+    <link rel="stylesheet" href="./styles.css">
+    <script defer src="./renderer.js"></script>
+
+</head>
+
+
+<body>
+    <div id="header">
+        <p>Status: <span id="status" style="color: red; margin-left: 0.5em;">Disconnected</span></p>
+        <button id="detach-button">Detach</button>
+        <button id="wait-button">Locate window</button>
+    </div>
+    <div id="app">
+        <div style="display: flex; justify-content: center;">
+            <img src="../assets/icon.png" class="logo" />
+        </div>
+        <h1><b><span class="app-name"></span> Monkey</b></h1>
+
+
+        <div id="missing-dependency" style="display: none;">
+            <h2>Uh Oh...</h2>
+            <p>You're missing Monkey Core, which <span class="app-name"></span> Monkey needs.</p>
+            <p>You can install Monkey Core here:</p>
+            <br />
+
+            <a href="https://github.com/aarontburn/nexus-monkey-core" target="_blank" id="mc-link-main">
+                Monkey Core
+            </a>
+            <br />
+
+            <br />
+            <p>or <a href="https://github.com/aarontburn/nexus-monkey-core" target="_blank">
+                    https://github.com/aarontburn/nexus-monkey-core
+                </a>
+            </p>
+        </div>
+
+
+        <div id="content">
+            <p>Looks like something went wrong, or you minimized <span class="app-name"></span>.</p>
+
+        </div>
+        
+
+    </div>
+
+</body>
+
+</html>
