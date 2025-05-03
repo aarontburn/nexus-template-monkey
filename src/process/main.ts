@@ -2,7 +2,6 @@ import * as path from "path";
 import { DataResponse, HTTPStatusCodes, IPCSource, Process, Setting } from "@nexus-app/nexus-module-builder"
 import { BooleanSetting, StringSetting } from "@nexus-app/nexus-module-builder/settings/types";
 import { Window } from "node-window-manager";
-import * as fs from 'fs';
 import { Rectangle } from "electron";
 
 const MODULE_ID: string = "{EXPORTED_MODULE_ID}";
@@ -87,7 +86,7 @@ export default class ChildProcess extends Process {
             appName: APP_NAME,
             exePath: this.getSettings().findSetting("path").getValue() as string,
             windowPath: this.getSettings().findSetting("window_path").getValue() as string,
-            filter: (window: Window) => false, // change this to match your window criteria
+            filter: (window: Window) => window.path.endsWith("SOMETHING") && window.isVisible(), // change this to match your window criteria
             onEvent: this.onMonkeyEvent.bind(this),
             options: {
                 closeOnExit: this.getSettings().findSetting("close_on_exit").getValue() as boolean,
@@ -206,6 +205,10 @@ export default class ChildProcess extends Process {
             }
         }
 
+    }
+
+    public async onSettingModified(modifiedSetting?: Setting<unknown>): Promise<void> {
+        
     }
 
 
