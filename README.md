@@ -16,9 +16,11 @@ You will need the following modules installed into Nexus.
 - [**Monkey Core**](https://github.com/aarontburn/nexus-monkey-core)
 
 
-## Installation
-1. Download and install all dependencies.
-2. Download the latest release `.zip`. 
-3. In Nexus, navigate to **Settings** > **Import Module**
-4. Select the downloaded `.zip` file to install.
+## Examples
 
+### [Discord Monkey](https://github.com/aarontburn/nexus-discord-monkey)
+### [GitHub Desktop Monkey](https://github.com/aarontburn/nexus-github-desktop-monkey)
+### [Medal Monkey](https://github.com/aarontburn/nexus-medal-monkey)
+### [Slack Monkey](https://github.com/aarontburn/nexus-slack-monkey)
+### [Spotify Monkey](https://github.com/aarontburn/nexus-spotify-monkey)
+### [Steam Monkey](https://github.com/aarontburn/nexus-steam-monkey)
