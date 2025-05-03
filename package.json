@@ -1,6 +1,6 @@
 {
-  "name": "nexus-discord-monkey",
-  "description": "'Embedding' Discord as a Nexus module. By monkeying it around.",
+  "name": "nexus-template-monkey",
+  "description": "'Embedding' external applications as a Nexus module. By monkeying it around.",
   "author": "aarontburn",
   "scripts": {
     "start": "npm run dev_export && cd ./node_modules/@nexus-app/nexus-client/ && npm start",

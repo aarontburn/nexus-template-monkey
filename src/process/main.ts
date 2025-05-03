@@ -87,7 +87,7 @@ export default class ChildProcess extends Process {
             appName: APP_NAME,
             exePath: this.getSettings().findSetting("path").getValue() as string,
             windowPath: this.getSettings().findSetting("window_path").getValue() as string,
-            filter: (w: Window) => w.path.endsWith("Discord.exe") && w.getTitle().endsWith('- Discord') && w.isVisible(),
+            filter: (window: Window) => false, // change this to match your window criteria
             onEvent: this.onMonkeyEvent.bind(this),
             options: {
                 closeOnExit: this.getSettings().findSetting("close_on_exit").getValue() as boolean,
@@ -193,18 +193,6 @@ export default class ChildProcess extends Process {
                 .setAccessID('open_on_startup')
 
         ];
-    }
-
-    public async onSettingModified(modifiedSetting?: Setting<unknown>): Promise<void> {
-        if (modifiedSetting?.getAccessID() === 'path') {
-            const path: string = modifiedSetting.getValue() as string;
-            try {
-                await fs.promises.access(path);
-                this.sendToRenderer("path", path);
-            } catch {
-                this.sendToRenderer("path-error", path);
-            }
-        }
     }
 
     public async handleExternal(source: IPCSource, eventType: string, data: any[]): Promise<DataResponse> {

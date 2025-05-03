@@ -19,23 +19,6 @@ const handleEvent = (eventType: string, data: any[]) => {
             waitCountdown();
             break;
         }
-        case "path": {
-            getElement("path").innerText = data[0];
-            break;
-        }
-
-        // case "path-error": {
-        //     Array.from(document.getElementsByClassName("tab")).forEach(element => (element as HTMLElement).style.display = "none");
-
-        //     getElement('path-error').style.display = '';
-        //     if (data[0].trim?.() === '') {
-        //         getElement('path-error-loc').innerText = "(no path set).";
-        //     } else {
-        //         getElement('path-error-loc').innerText = "(no file found at " + data[0] + ").";
-        //     }
-
-        //     break;
-        // }
 
         case "missing_dependency": {
             getElement('content').style.display = "none"
