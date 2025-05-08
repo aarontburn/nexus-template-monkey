@@ -3,7 +3,7 @@
     "author": "aarontburn",
     "version": "1.0.1",
     "description": "'Embedding' external applications as a Nexus module. By monkeying it around.",
-    "build_version": 4,
+    "build-version": 4,
     "platforms": [],
     "link": "https://github.com/aarontburn/nexus-template-monkey"
 }
