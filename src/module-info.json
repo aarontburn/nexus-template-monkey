@@ -1,9 +1,33 @@
 {
-    "name": "{EXPORTED_MODULE_NAME}",
-    "author": "aarontburn",
+    "name": "Template Monkey",
+    "id": "aarontburn.Template_Monkey",
     "version": "1.0.1",
+    "author": "aarontburn",
     "description": "'Embedding' external applications as a Nexus module. By monkeying it around.",
-    "build-version": 4,
     "platforms": [],
-    "link": "https://github.com/aarontburn/nexus-template-monkey"
+    "link": "https://github.com/aarontburn/nexus-template-monkey",
+    "build": {
+        "process": "./process/main.js",
+        "build-version": 4,
+        "excluded": [
+            "electron.ts"
+        ],
+        "included": [],
+        "replace": [
+            {
+                "from": "{EXPORTED_MODULE_ID}",
+                "to": "%id%",
+                "at": [
+                    "./process/main.ts"
+                ]
+            },
+            {
+                "from": "{EXPORTED_MODULE_NAME}",
+                "to": "%name%",
+                "at": [
+                    "./process/main.ts"
+                ]
+            }
+        ]
+    }
 }
