@@ -1,7 +1,8 @@
 // Sends information to the the process.
 const sendToProcess = (eventType: string, ...data: any[]): Promise<void> => {
-    return window.ipc.send(window, eventType, data);
+    return window.ipc.sendToProcess(eventType, data);
 }
+
 
 const getElement = (id: string): HTMLElement => document.getElementById(id);
 
@@ -52,7 +53,7 @@ const handleEvent = (eventType: string, data: any[]) => {
 }
 
 // Attach event handler.
-window.ipc.on(window, (eventType: string, data: any[]) => {
+window.ipc.onProcessEvent((eventType: string, data: any[]) => {
     handleEvent(eventType, data);
 });
 
