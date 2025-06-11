@@ -4,7 +4,7 @@
     "version": "1.0.1",
     "author": "aarontburn",
     "description": "'Embedding' external applications as a Nexus module. By monkeying it around.",
-    "platforms": [],
+    "platforms": ["win32", "linux", "darwin"],
     "link": "https://github.com/aarontburn/nexus-template-monkey",
     "build": {
         "process": "./process/main.js",
